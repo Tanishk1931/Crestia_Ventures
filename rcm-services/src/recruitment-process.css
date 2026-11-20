@@ -1,0 +1,225 @@
+.recruitment-process {
+  position: relative;
+  height: 140vh;
+  height: 140svh;
+  background: #F4FAF6;
+  color: #003B2F;
+}
+
+.recruitment-process-stage {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  align-items: flex-start;
+  padding: clamp(72px, 15svh, 160px) clamp(22px, 3vw, 48px) clamp(30px, 5svh, 64px);
+}
+
+.recruitment-process-inner {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1440px);
+  margin: 0 auto;
+}
+
+.recruitment-process-heading {
+  max-width: 900px;
+  margin: 0 auto clamp(34px, 5svh, 52px);
+  text-align: center;
+}
+
+.recruitment-process-heading h2 {
+  margin: 0;
+  color: #003B2F;
+  font-size: clamp(44px, 6.2vw, 72px);
+  line-height: 1;
+}
+
+.recruitment-process-heading p {
+  max-width: 780px;
+  margin: 18px auto 0;
+  color: #52665B;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(15px, 1.25vw, 18px);
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.recruitment-process-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(10px, 1.25vw, 18px);
+}
+
+.recruitment-process-card {
+  display: flex;
+  min-width: 0;
+  min-height: clamp(300px, 42svh, 430px);
+  flex-direction: column;
+  padding: clamp(18px, 1.7vw, 26px);
+  border: 1px solid rgba(0, 59, 47, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 16px 34px rgba(0, 59, 47, 0.08);
+}
+
+.recruitment-process-card--forest {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: #003B2F;
+}
+
+.recruitment-process-card--dark-green {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: #004D3D;
+}
+
+.recruitment-process-card--emerald {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: #008F72;
+}
+
+.recruitment-process-card--sage {
+  background: #8FC6A8;
+}
+
+.recruitment-process-card--mint {
+  background: #C9F5DF;
+}
+
+.recruitment-process-card--white {
+  border-color: #DCEBE1;
+  background: #FFFFFF;
+}
+
+.recruitment-process-number {
+  color: #008F72;
+  font-size: clamp(42px, 4.2vw, 58px);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+}
+
+.recruitment-process-card--forest .recruitment-process-number,
+.recruitment-process-card--dark-green .recruitment-process-number,
+.recruitment-process-card--emerald .recruitment-process-number {
+  color: #4FE3A1;
+}
+
+.recruitment-process-card h3 {
+  margin: clamp(24px, 3vh, 34px) 0 12px;
+  color: #003B2F;
+  font-size: clamp(18px, 1.45vw, 22px);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.recruitment-process-card--forest h3,
+.recruitment-process-card--dark-green h3,
+.recruitment-process-card--emerald h3 {
+  color: #FFFFFF;
+}
+
+.recruitment-process-card p {
+  margin: 0;
+  color: #52665B;
+  font-size: clamp(12px, 0.95vw, 14px);
+  line-height: 1.65;
+}
+
+.recruitment-process-card--forest p,
+.recruitment-process-card--dark-green p,
+.recruitment-process-card--emerald p {
+  color: #C9F5DF;
+}
+
+@media (max-width: 1100px) {
+  .recruitment-process {
+    height: auto;
+    min-height: 145vh;
+    min-height: 145svh;
+  }
+
+  .recruitment-process-stage {
+    position: relative;
+    top: auto;
+    min-height: 145vh;
+    min-height: 145svh;
+    padding: clamp(64px, 12svh, 110px) 28px 72px;
+  }
+
+  .recruitment-process-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .recruitment-process-card {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 620px) {
+  .recruitment-process {
+    min-height: 0;
+  }
+
+  .recruitment-process-stage {
+    min-height: 0;
+    padding: 64px 18px 76px;
+  }
+
+  .recruitment-process-heading {
+    margin-bottom: 30px;
+  }
+
+  .recruitment-process-heading h2 {
+    font-size: clamp(42px, 11vw, 58px);
+  }
+
+  .recruitment-process-heading p {
+    margin-top: 14px;
+    font-size: 14px;
+  }
+
+  .recruitment-process-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .recruitment-process-card {
+    min-height: 240px;
+    padding: 24px;
+  }
+
+  .recruitment-process-number {
+    font-size: 48px;
+  }
+
+  .recruitment-process-card h3 {
+    margin-top: 24px;
+    font-size: 21px;
+  }
+
+  .recruitment-process-card p {
+    max-width: 440px;
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recruitment-process {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .recruitment-process-stage {
+    position: relative;
+    top: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+}

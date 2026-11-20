@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "build:medical": "vite build --config vite.medical.config.js"
   },
   "dependencies": {
     "framer-motion": "^14.14.0",

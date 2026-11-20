@@ -1,0 +1,273 @@
+.healthcare-specializations {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 100vh;
+  min-height: 100svh;
+  position: relative;
+  overflow: hidden;
+  color: #52665B;
+  background: #EDF6F0;
+  padding: clamp(48px, 6vh, 80px) 28px;
+}
+
+.healthcare-specializations-inner {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1440px);
+  margin: auto;
+}
+
+.healthcare-specializations-heading {
+  max-width: 880px;
+  margin: 0 auto clamp(28px, 4vh, 44px);
+  text-align: center;
+}
+
+.healthcare-specializations-heading h2 {
+  margin: 0;
+  color: #003B2F;
+  font-size: clamp(44px, 6.2vw, 72px);
+  line-height: 1;
+}
+
+.healthcare-specializations-heading h2 span {
+  color: #008F72;
+  font-style: italic;
+}
+
+.healthcare-specializations-heading p {
+  max-width: 780px;
+  margin: 18px auto 0;
+  color: #52665B;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(15px, 1.25vw, 18px);
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.healthcare-specializations-scroll {
+  width: 100%;
+}
+
+.healthcare-specializations-track {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  height: clamp(360px, 64vh, 880px);
+}
+
+.healthcare-specialization-card {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid #DCEBE1;
+  border-radius: 18px;
+  background: #FFFFFF;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    flex-grow 680ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 350ms ease;
+}
+
+.healthcare-specializations-track .healthcare-specialization-card.is-expanded {
+  flex-grow: 4.5;
+  border-color: rgba(0, 143, 114, 0.72);
+}
+
+.healthcare-specializations-scroll.has-active-card
+  .healthcare-specialization-card:not(.is-expanded) {
+  flex-grow: 0.9;
+}
+
+.healthcare-specialization-card:focus-visible {
+  outline: 3px solid #008F72;
+  outline-offset: 4px;
+}
+
+.healthcare-specialization-image,
+.healthcare-specialization-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.healthcare-specialization-image {
+  z-index: -2;
+  object-fit: cover;
+  transition: filter 500ms ease;
+}
+
+.healthcare-specialization-overlay {
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(0, 20, 16, 0.04) 18%, rgba(0, 20, 16, 0.3) 56%, rgba(0, 20, 16, 0.88) 100%),
+    linear-gradient(90deg, rgba(0, 35, 27, 0.08), rgba(0, 35, 27, 0.04));
+  transition: background-color 400ms ease;
+}
+
+.healthcare-specialization-copy {
+  position: absolute;
+  right: clamp(16px, 2vw, 28px);
+  bottom: clamp(20px, 2.2vw, 30px);
+  left: clamp(16px, 2vw, 28px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.healthcare-specialization-title {
+  display: block;
+  max-width: 100%;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(15px, 1.32vw, 21px);
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: balance;
+  transition: font-size 450ms ease;
+}
+
+.healthcare-specialization-card.is-expanded .healthcare-specialization-title {
+  font-size: clamp(24px, 2.15vw, 32px);
+}
+
+.healthcare-specialization-description {
+  display: block;
+  max-width: 650px;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 0;
+  color: #f8faf7;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(14px, 1.08vw, 16px);
+  font-weight: 400;
+  line-height: 1.65;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    max-height 450ms ease,
+    margin-top 350ms ease,
+    opacity 350ms ease,
+    transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.healthcare-specialization-card.is-expanded .healthcare-specialization-description {
+  max-height: 12rem;
+  margin-top: 10px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 80ms, 80ms, 100ms, 80ms;
+}
+
+@media (max-width: 1100px) and (min-width: 621px) {
+  .healthcare-specializations {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .healthcare-specializations-scroll {
+    overflow-x: auto;
+    padding: 2px 2px 12px;
+    scrollbar-color: rgba(0, 143, 114, 0.42) rgba(201, 245, 223, 0.45);
+    scrollbar-width: thin;
+  }
+
+  .healthcare-specializations-track {
+    width: max(100%, 1180px);
+    height: clamp(340px, 58vh, 600px);
+  }
+
+  .healthcare-specialization-card.is-expanded .healthcare-specialization-title {
+    font-size: 28px;
+  }
+
+  .healthcare-specialization-description {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 620px) {
+  .healthcare-specializations {
+    display: block;
+    min-height: 0;
+    padding: 64px 18px 72px;
+  }
+
+  .healthcare-specializations-inner {
+    margin: 0 auto;
+  }
+
+  .healthcare-specializations-heading {
+    margin-bottom: 30px;
+  }
+
+  .healthcare-specializations-heading h2 {
+    font-size: clamp(42px, 11vw, 58px);
+  }
+
+  .healthcare-specializations-heading p {
+    margin-top: 14px;
+  }
+
+  .healthcare-specializations-scroll {
+    overflow: visible;
+  }
+
+  .healthcare-specializations-track {
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+  }
+
+  .healthcare-specialization-card,
+  .healthcare-specializations-track .healthcare-specialization-card.is-expanded,
+  .healthcare-specializations-scroll.has-active-card
+    .healthcare-specialization-card:not(.is-expanded) {
+    flex: none;
+    width: 100%;
+    height: 220px;
+  }
+
+  .healthcare-specializations-track .healthcare-specialization-card.is-expanded {
+    height: 350px;
+  }
+
+  .healthcare-specialization-copy {
+    right: 22px;
+    bottom: 22px;
+    left: 22px;
+  }
+
+  .healthcare-specialization-title,
+  .healthcare-specialization-card.is-expanded .healthcare-specialization-title {
+    font-size: 22px;
+  }
+
+  .healthcare-specialization-description {
+    max-width: 540px;
+    font-size: 14px;
+  }
+
+  .healthcare-specialization-card.is-expanded .healthcare-specialization-description {
+    max-height: 10rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .healthcare-specialization-card,
+  .healthcare-specialization-image,
+  .healthcare-specialization-title,
+  .healthcare-specialization-description {
+    transition-duration: 0.01ms;
+    transition-delay: 0ms;
+  }
+}
