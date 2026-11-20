@@ -1,0 +1,44 @@
+<!-- Enqueue ring.css and ring.js as an ES module, or use the example tags below. -->
+<link rel="stylesheet" href="ring.css?v=7">
+
+<section class="section rsv-root" id="services" aria-labelledby="services-title">
+  <div class="rcm-ring-shell">
+    <div class="rcm-ring-heading">
+      <span class="eyebrow">Our expertise</span>
+      <h2 id="services-title">Every claim matters.</h2>
+    </div>
+    <div
+      class="rcm-ring"
+      id="rcm-ring"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Healthcare revenue cycle management services"
+    >
+      <div
+        class="rcm-ring__stage"
+        tabindex="0"
+        aria-label="Service cards. Use the left and right arrow keys to change cards, or drag horizontally."
+      >
+        <div class="rcm-ring__glow" aria-hidden="true">
+          <span class="rcm-ring__glow-cyan"></span>
+          <span class="rcm-ring__glow-lavender"></span>
+        </div>
+        <div class="rcm-ring__canvas" aria-hidden="true"></div>
+        <span class="rcm-ring__instructions">Drag to browse services. Press left or right arrow to change the active service.</span>
+      </div>
+      <div class="rcm-ring__controls" aria-label="Carousel controls">
+        <button type="button" data-ring-previous aria-label="Previous service">‹</button>
+        <span class="rcm-ring__counter" aria-hidden="true">01 / 12</span>
+        <button type="button" data-ring-next aria-label="Next service">›</button>
+      </div>
+      <div class="rcm-ring__caption">
+        <h3 class="rcm-ring__active-title">Eligibility verification</h3>
+        <p class="rcm-ring__active-description">Checks a patient's insurance coverage, benefits and demographic details before the visit, so claims start with accurate information.</p>
+      </div>
+      <p class="rcm-ring__live" aria-live="polite" aria-atomic="true"></p>
+      <ol class="rcm-ring__fallback" aria-label="Healthcare RCM services"></ol>
+    </div>
+  </div>
+</section>
+
+<script type="module" src="ring.js?v=8"></script>
