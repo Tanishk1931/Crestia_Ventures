@@ -1,0 +1,248 @@
+/* =====================================================================
+   Crestia Ventures — shared global navbar
+   Used on RCM, IT Recruitment, and Healthcare Recruitment pages.
+   ===================================================================== */
+
+.cv-nav {
+  --cv-nav-ink: #0A1640;
+  --cv-nav-muted: #5A6478;
+  --cv-nav-blue: #1148D7;
+  --cv-nav-blue-hover: #0D3BB3;
+  --cv-nav-line: rgba(10, 22, 64, 0.10);
+  --cv-nav-bg: rgba(255, 255, 255, 0.86);
+  --cv-nav-bg-solid: rgba(255, 255, 255, 0.96);
+  --cv-nav-ease: cubic-bezier(.16, 1, .3, 1);
+  --cv-nav-h: 72px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 14px 0;
+  background: var(--cv-nav-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  transition:
+    background .3s var(--cv-nav-ease),
+    border-color .3s var(--cv-nav-ease),
+    padding .3s var(--cv-nav-ease),
+    box-shadow .3s var(--cv-nav-ease);
+}
+
+.cv-nav.is-scrolled {
+  padding: 10px 0;
+  background: var(--cv-nav-bg-solid);
+  border-bottom-color: var(--cv-nav-line);
+  box-shadow: 0 8px 28px -22px rgba(10, 22, 64, 0.35);
+}
+
+.cv-nav-inner {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-width: 0;
+}
+
+.cv-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  z-index: 2;
+  text-decoration: none;
+  color: var(--cv-nav-ink);
+  min-width: 0;
+}
+
+.cv-brand-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.cv-brand-name {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-weight: 700;
+  font-size: 16.5px;
+  letter-spacing: -0.02em;
+  color: var(--cv-nav-ink);
+  white-space: nowrap;
+}
+
+.cv-nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--cv-nav-line);
+  border-radius: 8px;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.cv-nav-toggle span {
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  background: var(--cv-nav-ink);
+  transition: transform .3s var(--cv-nav-ease), opacity .3s var(--cv-nav-ease);
+}
+
+.cv-nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(3.25px) rotate(45deg);
+}
+
+.cv-nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.cv-nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-3.25px) rotate(-45deg);
+}
+
+.cv-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(14px, 1.8vw, 28px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 0;
+}
+
+.cv-nav-links a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-size: 11.5px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--cv-nav-muted);
+  white-space: nowrap;
+  padding: 6px 0;
+  transition: color .25s var(--cv-nav-ease);
+}
+
+.cv-nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background: var(--cv-nav-blue);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .28s var(--cv-nav-ease);
+}
+
+.cv-nav-links a:hover,
+.cv-nav-links a:focus-visible {
+  color: var(--cv-nav-blue);
+  outline: none;
+}
+
+.cv-nav-links a:hover::after,
+.cv-nav-links a:focus-visible::after,
+.cv-nav-links a.is-active::after,
+.cv-nav-links a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.cv-nav-links a.is-active,
+.cv-nav-links a[aria-current="page"] {
+  color: var(--cv-nav-blue);
+}
+
+body.cv-nav-open {
+  overflow: hidden;
+}
+
+@media (max-width: 1100px) {
+  .cv-nav-toggle { display: inline-flex; }
+
+  /* backdrop-filter makes fixed children relative to the header box —
+     expand the header while open so the drawer can cover the viewport. */
+  body.cv-nav-open .cv-nav {
+    bottom: 0;
+    height: 100%;
+    padding: 14px 0 0;
+    background: #fff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .cv-nav-links {
+    position: absolute;
+    top: var(--cv-nav-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 12px 28px 40px;
+    background: #fff;
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .35s var(--cv-nav-ease), opacity .35s var(--cv-nav-ease);
+    overflow-y: auto;
+  }
+
+  .cv-nav-links.is-open {
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .cv-nav-links a {
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    padding: 14px 0;
+    width: 100%;
+    border-bottom: 1px solid var(--cv-nav-line);
+  }
+
+  .cv-nav-links a::after {
+    left: 0;
+    right: auto;
+    width: 36px;
+    bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-nav-inner { width: calc(100% - 32px); }
+  .cv-brand-name { font-size: 15px; }
+  .cv-brand-logo { width: 30px; height: 30px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-nav,
+  .cv-nav-links,
+  .cv-nav-links a,
+  .cv-nav-links a::after,
+  .cv-nav-toggle span {
+    transition-duration: .01ms !important;
+  }
+}

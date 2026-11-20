@@ -1,0 +1,191 @@
+/* =====================================================================
+   RCM page: warm ivory background with softly floating champagne panels.
+
+   Everything is scoped to .page-bg (fixed page layer). Pointer-driven
+   values arrive as CSS variables from hero-fx.js:
+     --px --py  page-relative pointer, -1..1 (background parallax)
+   Only transform / opacity are animated.
+   ===================================================================== */
+
+.page-bg {
+  --hb-gold: 214, 173, 96;
+  --hb-gold-soft: 214, 173, 96;
+  --hb-panel-gold: 166, 125, 53;
+  --px: 0; --py: 0; --sx: 50%; --sy: 40%; --sa: 0;
+  position: fixed; inset: 0; z-index: 0;
+  overflow: hidden; pointer-events: none;
+  background: #FAF9F6;
+  contain: layout paint;
+}
+.page-bg * { pointer-events: none; }
+
+/* very light ambient cursor glow */
+.hb-softspot {
+  position: absolute; left: 0; top: 0; width: 640px; height: 640px; margin: -320px 0 0 -320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--hb-gold), .1) 0, rgba(var(--hb-gold), .035) 32%, transparent 68%);
+  mix-blend-mode: screen;
+  opacity: calc(var(--sa) * 0.55);
+  transform: translate3d(var(--sx), var(--sy), 0);
+  will-change: transform, opacity;
+}
+
+/* ---------- ambient lights (drift + gentle cursor shift) ---------- */
+.hb-lights {
+  position: absolute; inset: 0;
+  translate: calc(var(--px) * 22px) calc(var(--py) * 16px);
+}
+.hb-light {
+  position: absolute; left: var(--l); top: var(--t);
+  width: var(--s); height: var(--s); margin: calc(var(--s) / -2) 0 0 calc(var(--s) / -2);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--hb-gold), var(--a)) 0, rgba(var(--hb-gold), calc(var(--a) * .35)) 38%, transparent 68%);
+  animation: hb-light var(--ld) ease-in-out var(--lde, 0s) infinite alternate;
+  will-change: transform;
+}
+.hb-light:nth-child(1) { --s: 780px; --l: 8%;  --t: 80%; --a: .08; --ld: 34s; --dx: 140px; --dy: -70px; }
+.hb-light:nth-child(2) { --s: 700px; --l: 94%; --t: 12%; --a: .07; --ld: 41s; --dx: -120px; --dy: 90px;  --lde: -9s; }
+.hb-light:nth-child(3) { --s: 560px; --l: 56%; --t: 104%; --a: .055; --ld: 47s; --dx: 160px; --dy: -50px; --lde: -20s; }
+
+.hb-glow {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(38% 52% at 0% 100%, rgba(var(--hb-gold), .07), transparent 72%),
+    radial-gradient(34% 46% at 100% 0%, rgba(var(--hb-gold), .06), transparent 72%),
+    radial-gradient(30% 42% at 100% 100%, rgba(var(--hb-gold), .045), transparent 72%),
+    radial-gradient(28% 38% at 0% 0%, rgba(var(--hb-gold), .035), transparent 72%);
+}
+
+/* Keep the floating glass panels; remove the technical grid and floor textures. */
+.hb-grid, .hb-dots, .hb-floor, .hb-data { display: none !important; }
+
+/* ---------- data glyphs ---------- */
+.hb-data {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  -webkit-mask-image: radial-gradient(ellipse 60% 66% at 50% 50%, transparent 0%, rgba(0,0,0,.5) 55%, #000 100%);
+          mask-image: radial-gradient(ellipse 60% 66% at 50% 50%, transparent 0%, rgba(0,0,0,.5) 55%, #000 100%);
+}
+/* ---------- glass panels ---------- */
+.hb-tiers {
+  position: absolute; inset: 0;
+  -webkit-mask-image: radial-gradient(ellipse 58% 64% at 50% 50%, rgba(0,0,0,.44) 0%, rgba(0,0,0,.78) 45%, #000 100%);
+          mask-image: radial-gradient(ellipse 58% 64% at 50% 50%, rgba(0,0,0,.44) 0%, rgba(0,0,0,.78) 45%, #000 100%);
+}
+.hb-tunnel {
+  position: absolute; inset: 0;
+  perspective: 1400px; perspective-origin: 50% 50%;
+  translate: calc(var(--px) * var(--dep) * -1px) calc(var(--py) * var(--dep) * -.6px);
+}
+.hb-tunnel.far  { --dep: 8; }
+.hb-tunnel.mid  { --dep: 20; }
+.hb-tunnel.near { --dep: 38; }
+
+.hb-plane {
+  position: absolute; left: 50%; top: 50%; width: 0; height: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(56deg) rotateZ(-32deg);
+}
+.hb-panel {
+  --rx: 0deg; --ry: 0deg; --rz: 0deg;
+  position: absolute; left: 0; top: 0; display: block;
+  width: var(--w); height: var(--h);
+  margin: calc(var(--h) / -2) 0 0 calc(var(--w) / -2);
+  border-radius: 6px;
+  border: 1px solid rgba(var(--hb-panel-gold), .5);
+  background:
+    linear-gradient(118deg, transparent 38%, rgba(255, 255, 255, .3) 47%, rgba(255, 255, 255, .08) 53%, transparent 62%),
+    linear-gradient(135deg, rgba(var(--hb-panel-gold), .12), rgba(var(--hb-panel-gold), .045) 45%, rgba(var(--hb-panel-gold), .09));
+  box-shadow:
+    inset 0 0 26px rgba(var(--hb-panel-gold), .1),
+    inset 0 0 2px rgba(var(--hb-gold-soft), .28),
+    0 0 22px rgba(var(--hb-panel-gold), .08);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation:
+    hb-drift var(--d) linear var(--del) infinite var(--dir, normal),
+    hb-sway var(--sdur, 12s) ease-in-out var(--sdel, 0s) infinite alternate,
+    hb-bob var(--bdur, 15s) ease-in-out var(--bdel, 0s) infinite alternate;
+}
+@media (min-width: 900px) {
+  .hb-panel { -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
+}
+.hb-panel b {
+  position: absolute; inset: -1px; display: block; padding: 1px;
+  border-radius: 6px; overflow: hidden;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+.hb-panel u {
+  position: absolute; top: 0; bottom: 0; left: -45%; width: 45%; display: block;
+  background: linear-gradient(90deg, transparent, rgba(var(--hb-panel-gold), .85) 55%, transparent);
+  animation: hb-sweep var(--sw, 9s) ease-in-out var(--sd, 0s) infinite;
+  will-change: transform;
+}
+
+.hb-panel.p1 { --w: 400px; --h: 220px; --y: -360px; --z: 20px;   --d: 40s; --del: -4s;  --o: .52; --sd: -2s; --rx: 6deg;  --ry: -10deg; --rz: 3deg; }
+.hb-panel.p2 { --w: 300px; --h: 170px; --y: -190px; --z: 90px;   --d: 46s; --del: -21s; --o: .46; --sd: -5s; --sw: 11s; --ry: 14deg;  --rz: -4deg; --dir: reverse; --sdur: 10s; --bdur: 12s; }
+.hb-panel.p3 { --w: 480px; --h: 260px; --y: -10px;  --z: -90px;  --d: 36s; --del: -30s; --o: .42; --sd: -1s; --sw: 12s; --rx: -8deg; --ry: 6deg;  --sdur: 16s; --bdur: 19s; }
+.hb-panel.p4 { --w: 340px; --h: 190px; --y: 170px;  --z: 60px;   --d: 42s; --del: -13s; --o: .5;  --sd: -7s; --rx: 10deg; --ry: -16deg; --rz: -3deg; --dir: reverse; --sdel: -5s; }
+.hb-panel.p5 { --w: 420px; --h: 230px; --y: 350px;  --z: 0px;    --d: 38s; --del: -26s; --o: .52; --sd: -4s; --sw: 10s; --ry: 8deg;  --rz: 5deg; --bdel: -7s; }
+.hb-panel.p6 { --w: 260px; --h: 150px; --y: -280px; --z: 140px;  --d: 34s; --del: -15s; --o: .44; --sd: -3s; --sw: 8s;  --rx: -12deg; --ry: -8deg; --sdur: 9s;  --bdur: 11s; --dir: reverse; }
+.hb-panel.p7 { --w: 360px; --h: 200px; --y: 80px;   --z: -150px; --d: 48s; --del: -9s;  --o: .4;  --sd: -6s; --sw: 13s; --ry: 18deg; --rz: -6deg; --sdur: 18s; }
+.hb-panel.p8 { --w: 280px; --h: 160px; --y: 260px;  --z: 130px;  --d: 32s; --del: -2s;  --o: .46; --sd: -8s; --rx: 8deg; --ry: 12deg; --sdur: 8s; --bdur: 10s; --bdel: -3s; }
+.hb-panel.p9 { --w: 440px; --h: 240px; --y: -100px; --z: -40px;  --d: 44s; --del: -35s; --o: .44; --sd: -9s; --sw: 12s; --rx: -5deg; --ry: -12deg; --dir: reverse; --sdel: -8s; }
+
+.hb-tunnel.far  .hb-panel { --sway: 4deg;  --bob: 18px; }
+.hb-tunnel.mid  .hb-panel { --sway: 6deg;  --bob: 30px; }
+.hb-tunnel.near .hb-panel { --sway: 9deg;  --bob: 46px; }
+
+/* ---------- vignette ---------- */
+.hb-vignette {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 78% 70% at 50% 45%, transparent 50%, rgba(32, 32, 32, .035) 100%);
+}
+
+/* ---------- keyframes ---------- */
+@keyframes hb-drift {
+  0%   { transform: translate3d(-1100px, var(--y), var(--z)) rotateX(var(--rx)) rotateY(var(--ry)) rotateZ(var(--rz)); opacity: 0; }
+  16%  { opacity: var(--o); }
+  84%  { opacity: var(--o); }
+  100% { transform: translate3d(1100px, var(--y), var(--z)) rotateX(var(--rx)) rotateY(var(--ry)) rotateZ(var(--rz)); opacity: 0; }
+}
+@keyframes hb-sway {
+  from { rotate: 1 .6 0 calc(var(--sway) * -1); }
+  to   { rotate: 1 .6 0 var(--sway); }
+}
+@keyframes hb-bob {
+  from { translate: 0 0 0; }
+  to   { translate: 0 calc(var(--bob) * -.5) var(--bob); }
+}
+@keyframes hb-sweep {
+  0%   { transform: translateX(0); }
+  55%, 100% { transform: translateX(320%); }
+}
+@keyframes hb-light {
+  from { transform: translate3d(calc(var(--dx) * -1), calc(var(--dy) * -1), 0) scale(.94); }
+  to   { transform: translate3d(var(--dx), var(--dy), 0) scale(1.08); }
+}
+@keyframes hb-floor { from { transform: rotateX(74deg) translateY(0); }  to { transform: rotateX(74deg) translateY(64px); } }
+@keyframes hb-ceil  { from { transform: rotateX(-74deg) translateY(0); } to { transform: rotateX(-74deg) translateY(-64px); } }
+@keyframes hb-grid-drift { to { transform: translate3d(var(--hb-cell), var(--hb-cell), 0); } }
+@keyframes hb-dot-drift  { to { transform: translate3d(var(--hb-dot), var(--hb-dot), 0); } }
+@keyframes hb-twinkle {
+  0%, 100% { opacity: .25; }
+  50%      { opacity: 1; }
+}
+
+.rcm-page.is-bg-off .page-bg *,
+.hero.is-off .stage { animation-play-state: paused !important; }
+
+@media (max-width: 899px) {
+  .hb-panel.p6, .hb-panel.p7, .hb-panel.p8, .hb-panel.p9 { display: none; }
+  .hb-plane { transform: rotateX(56deg) rotateZ(-32deg) scale(.72); }
+}
+@media (max-width: 619px) {
+  .hb-panel { -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .hb-panel.p5 { display: none; }
+  .hb-light { opacity: .55; }
+  .hb-plane { transform: rotateX(56deg) rotateZ(-32deg) scale(.55); }
+}

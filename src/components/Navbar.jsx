@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { brand } from '../data/brand.js';
+import '../../public_html/shared/home-navbar.css';
 
 export default function Navbar({ logoSlotRef, wordmarkRef }) {
   return (
@@ -21,9 +22,9 @@ export default function Navbar({ logoSlotRef, wordmarkRef }) {
 
         <nav className="nav-links" aria-label="Main navigation">
           {[
-            ['The story', '#brand-story'],
-            ['The studio', '#company-card'],
-            ['Contact', '#contact'],
+            ['RCM', '/rcm/'],
+            ['IT Staffing', '/it/'],
+            ['Medical Staffing', '/medical/'],
           ].map(([label, href], index) => (
             <motion.a
               key={label}

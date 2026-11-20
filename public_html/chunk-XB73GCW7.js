@@ -1,0 +1,1 @@
+var e={name:"Crestia Ventures",tagline:"Career coaching, interview training and IT placement \u2014 under one roof.",phone:"+1 (123) 123 1234",whatsapp:"https://wa.me/1234123456",email:"info@crestiaventures.com",address:"Texas, USA",linkedin:"https://www.linkedin.com/company/crestia-ventures/"};export{e as a};
