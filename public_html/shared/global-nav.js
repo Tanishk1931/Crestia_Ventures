@@ -15,7 +15,7 @@
   var ROUTES = {
     rcm: '/rcm/',
     it: '/it/',
-    healthcare: '/healthcare-recruitment/'
+    healthcare: '/medical/'
   };
 
   function pathOf(href) {

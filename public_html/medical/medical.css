@@ -118,72 +118,10 @@ body.medical-page {
   }
 }
 
-.medical-nav {
-  position: fixed;
-  z-index: 50;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 76px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid rgba(220, 235, 225, 0.84);
-  background: rgba(244, 250, 246, 0.84);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  transition: background 0.5s ease, border-color 0.5s ease;
-}
-
-.medical-nav-inner {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.medical-brand,
-.medical-nav-links,
 .medical-footer-inner,
 .medical-footer a {
   display: flex;
   align-items: center;
-}
-
-.medical-brand {
-  gap: 10px;
-  color: var(--medical-heading);
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.medical-brand-mark {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #8FC6A8, #008F72);
-  box-shadow: 0 8px 20px -8px rgba(0, 143, 114, 0.24);
-}
-
-.medical-nav-links {
-  gap: 28px;
-}
-
-.medical-nav-links a {
-  color: var(--medical-secondary);
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  opacity: 0.82;
-  transition: opacity 0.25s ease, color 0.25s ease;
-}
-
-.medical-nav-links a:hover {
-  color: var(--medical-heading);
-  opacity: 1;
 }
 
 .medical-intro {
@@ -399,19 +337,6 @@ body.medical-page {
 }
 
 @media (max-width: 720px) {
-  .medical-nav {
-    height: 66px;
-  }
-  .medical-nav-inner {
-    padding: 0 18px;
-  }
-  .medical-nav-links {
-    gap: 14px;
-  }
-  .medical-nav-links a:nth-child(1),
-  .medical-nav-links a:nth-child(3) {
-    display: none;
-  }
   .medical-intro {
     min-height: 540px;
   }
