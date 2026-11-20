@@ -8,44 +8,7 @@
   var year = document.getElementById('yr');
   if (year) year.textContent = String(new Date().getFullYear());
 
-  var nav = document.querySelector('.it-nav');
-  var toggle = document.querySelector('.it-nav-toggle');
-  var links = document.querySelector('.it-nav-links');
   var mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-  /* Career Consultancy destination — configurable, page not required yet */
-  window.IT_NAV = window.IT_NAV || {
-    careerConsultancy: '/career-consultancy/'
-  };
-  document.querySelectorAll('[data-nav="career"]').forEach(function (el) {
-    if (window.IT_NAV.careerConsultancy) {
-      el.setAttribute('href', window.IT_NAV.careerConsultancy);
-    }
-  });
-
-  function closeMenu() {
-    if (!toggle || !links) return;
-    toggle.setAttribute('aria-expanded', 'false');
-    links.classList.remove('is-open');
-    document.body.classList.remove('it-nav-open');
-  }
-
-  if (toggle && links) {
-    toggle.addEventListener('click', function () {
-      var open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', open ? 'false' : 'true');
-      links.classList.toggle('is-open', !open);
-      document.body.classList.toggle('it-nav-open', !open);
-    });
-    links.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', closeMenu);
-    });
-  }
-
-  window.addEventListener('scroll', function () {
-    if (!nav) return;
-    nav.classList.toggle('is-scrolled', window.scrollY > 12);
-  }, { passive: true });
 
   /* Smooth in-page anchors */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
@@ -155,7 +118,7 @@
     var stage = document.getElementById('it-process-cycle');
     if (!section || !stage) return;
 
-    /* Respect OS reduce-motion unless ?motion=1 (same as hero flip) */
+    /* Respect OS reduce-motion only when html.it-reduce-motion is set (?motion=0) */
     var reduce = document.documentElement.classList.contains('it-reduce-motion');
 
     function playStatic() {

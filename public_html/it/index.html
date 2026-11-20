@@ -11,12 +11,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;family=Syne:wght@600;700;750;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="it.css?v=13">
+  <link rel="stylesheet" href="../shared/global-nav.css">
   <script>
     document.documentElement.className += ' js';
-    /* Fade-only flip when OS reduce-motion is on — bypass with ?motion=1 */
+    /* Full motion is the default on the main IT URL (?motion=1).
+       Opt out with ?motion=0 to respect OS reduce-motion. */
     (function () {
-      var force = /(?:\?|&)motion=1(?:&|$)/.test(location.search);
-      if (!force && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var q = location.search;
+      var forceOff = /(?:\?|&)motion=0(?:&|$)/.test(q);
+      var forceOn = !forceOff; /* main page + ?motion=1 always animate */
+      if (!forceOn && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         document.documentElement.classList.add('it-reduce-motion');
       }
     })();
@@ -29,25 +33,21 @@
     <canvas class="it-page-wave" id="code-wave"></canvas>
   </div>
 
-  <header class="it-nav" id="top">
-    <div class="it-container it-nav-inner">
-      <a class="it-brand" href="#top" aria-label="Crestia Ventures">
-        <span class="it-brand-mark" aria-hidden="true"></span>
-        <span class="it-brand-name">Crestia Ventures</span>
+  <header class="cv-nav" id="top" data-page="it">
+    <div class="cv-nav-inner">
+      <a class="cv-brand" href="/" aria-label="Crestia Ventures home">
+        <img class="cv-brand-logo" src="../Gemini_Generated_Image_wglq2wglq2wglq2w.png" width="34" height="34" alt="">
+        <span class="cv-brand-name">Crestia Ventures</span>
       </a>
-
-      <button class="it-nav-toggle" type="button" aria-expanded="false" aria-controls="it-primary-nav" aria-label="Open menu">
+      <button class="cv-nav-toggle" type="button" aria-expanded="false" aria-controls="cv-primary-nav" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
-
-      <nav class="it-nav-links" id="it-primary-nav" aria-label="Primary">
-        <a href="/it/#expertise">IT Services</a>
-        <a href="/career-consultancy/" data-nav="career">Career Consultancy</a>
-        <a href="#why">About</a>
-        <a href="#contact">Contact</a>
+      <nav class="cv-nav-links" id="cv-primary-nav" aria-label="Primary">
+        <a href="/rcm/" data-nav="rcm">Revenue Cycle Management</a>
+        <a href="/it/" data-nav="it">IT Recruitment &amp; Staffing</a>
+        <a href="/healthcare-recruitment/" data-nav="healthcare">Healthcare Recruitment</a>
+        <a href="#contact" data-nav="contact">Contact</a>
       </nav>
-
-      <a class="it-btn it-btn-primary it-btn-sm it-nav-cta" href="#contact">Start a Project</a>
     </div>
   </header>
 
@@ -401,9 +401,9 @@
         <div>
           <h4>Navigate</h4>
           <div class="it-footer-links">
-            <a href="#expertise">IT Services</a>
-            <a href="/career-consultancy/" data-nav="career">Career Consultancy</a>
-            <a href="#why">About</a>
+            <a href="/rcm/">Revenue Cycle Management</a>
+            <a href="/it/#expertise">IT Recruitment &amp; Staffing</a>
+            <a href="/healthcare-recruitment/">Healthcare Recruitment</a>
             <a href="#contact">Contact</a>
           </div>
         </div>
@@ -422,11 +422,8 @@
     </div>
   </footer>
 
-  <script>
-    /* Configurable Career Consultancy destination (page may not exist yet). */
-    window.IT_NAV = { careerConsultancy: '/career-consultancy/' };
-  </script>
   <script src="code-wave.js?v=7" defer></script>
   <script src="it.js?v=10" defer></script>
+  <script src="../shared/global-nav.js" defer></script>
 </body>
 </html>

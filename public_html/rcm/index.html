@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="ring.css?v=7">
   <link rel="stylesheet" href="rcm-sections.css?v=1">
   <link rel="stylesheet" href="rcm-cycle.css?v=1">
+  <link rel="stylesheet" href="../shared/global-nav.css">
   <script>document.documentElement.className += ' js';</script>
 </head>
 <body class="rcm-page">
@@ -56,19 +57,21 @@
   </div>
 
 
-  <header class="rcm-nav" id="top">
-    <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Crestia Ventures">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-name">Crestia Ventures</span>
+  <header class="cv-nav" id="top" data-page="rcm">
+    <div class="cv-nav-inner">
+      <a class="cv-brand" href="/" aria-label="Crestia Ventures home">
+        <img class="cv-brand-logo" src="../Gemini_Generated_Image_wglq2wglq2wglq2w.png" width="34" height="34" alt="">
+        <span class="cv-brand-name">Crestia Ventures</span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="page-not-found.html">Services</a>
-        <a href="page-not-found.html">Workflow</a>
-        <a href="page-not-found.html">Reporting</a>
-        <a href="page-not-found.html">Contact</a>
+      <button class="cv-nav-toggle" type="button" aria-expanded="false" aria-controls="cv-primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="cv-nav-links" id="cv-primary-nav" aria-label="Primary">
+        <a href="/rcm/" data-nav="rcm">Revenue Cycle Management</a>
+        <a href="/it/" data-nav="it">IT Recruitment &amp; Staffing</a>
+        <a href="/healthcare-recruitment/" data-nav="healthcare">Healthcare Recruitment</a>
+        <a href="#contact" data-nav="contact">Contact</a>
       </nav>
-      <a class="btn btn-primary btn-sm" href="page-not-found.html">Get Started</a>
     </div>
   </header>
 
@@ -381,5 +384,6 @@
   <script src="rcm-sections.js?v=1" defer></script>
   <script src="rcm-cycle.js?v=1" defer></script>
   <script type="module" src="ring.js?v=8"></script>
+  <script src="../shared/global-nav.js" defer></script>
 </body>
 </html>

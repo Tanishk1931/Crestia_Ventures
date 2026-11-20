@@ -14,8 +14,8 @@
   var mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   var mqFine = window.matchMedia('(hover: hover) and (pointer: fine)');
   var cover = document.getElementById('it-wave-cover') || document.body;
-  /* ?motion=1 forces full effects even if OS "Reduce motion" is on */
-  var forceMotion = /(?:\?|&)motion=1(?:&|$)/.test(location.search);
+  /* Full motion by default on main IT URL; opt out with ?motion=0 */
+  var forceMotion = !/(?:\?|&)motion=0(?:&|$)/.test(location.search);
 
   var dpr = 1;
   var w = 0;
