@@ -1,0 +1,14 @@
+/*
+Theme Name: Crestia Theme
+Theme URI: https://www.crestiaventures.com/
+Author: Crestia Ventures
+Description: Custom WordPress theme preserving the Crestia Ventures site UI (Home, RCM, Healthcare, IT) for GoDaddy Managed WordPress. Production stack: PHP, HTML, CSS, JavaScript, Three.js, GSAP.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 8.0
+Text Domain: crestia
+License: Proprietary
+*/
+
+/* Theme metadata only — page styles are enqueued from assets/css/ */

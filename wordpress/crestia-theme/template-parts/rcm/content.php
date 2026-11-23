@@ -1,0 +1,368 @@
+﻿
+
+  <!-- page-wide animated background -->
+  <div class="page-bg" aria-hidden="true">
+    <div class="hb-lights"><i class="hb-light"></i><i class="hb-light"></i><i class="hb-light"></i></div>
+    <div class="hb-glow"></div>
+    <div class="hb-grid"></div>
+    <div class="hb-dots"></div>
+    <div class="hb-floor hb-floor--ceil"><i></i></div>
+    <div class="hb-floor"><i></i></div>
+    <svg class="hb-data" viewBox="0 0 1440 780" preserveAspectRatio="xMidYMid slice" focusable="false">
+      <g class="t1"><path d="M70 120h8M74 116v8"/><path d="M180 610h8M184 606v8"/><path d="M1330 150h8M1334 146v8"/><path d="M1260 660h8M1264 656v8"/><path d="M40 420h8M44 416v8"/><path d="M1400 430h8M1404 426v8"/></g>
+      <g class="t2"><path d="M120 250h26M120 256h14"/><path d="M1270 300h30M1286 306h14"/><path d="M90 700h22M90 706h34"/><path d="M1180 90h20M1180 96h32"/><path d="M230 60h18"/><path d="M1350 560h24"/></g>
+      <g class="t3"><path d="M250 330h8M254 326v8"/><path d="M1190 480h8M1194 476v8"/><path d="M330 720h8M334 716v8"/><path d="M1110 40h8M1114 36v8"/><path d="M20 560h26"/><path d="M1380 260h22"/></g>
+      <g class="t1"><rect class="sq" x="150" y="190" width="2" height="2"/><rect class="sq" x="1320" y="380" width="2" height="2"/><rect class="sq" x="60" y="520" width="2" height="2"/><rect class="sq" x="1230" y="210" width="2" height="2"/><rect class="sq" x="300" y="130" width="2" height="2"/><rect class="sq" x="1390" y="700" width="2" height="2"/></g>
+      <g class="t2"><rect class="sq" x="210" y="470" width="2" height="2"/><rect class="sq" x="1100" y="720" width="2" height="2"/><rect class="sq" x="380" y="680" width="2" height="2"/><rect class="sq" x="1340" y="40" width="2" height="2"/><rect class="sq" x="30" y="300" width="2" height="2"/><rect class="sq" x="1150" y="560" width="2" height="2"/></g>
+    </svg>
+    <div class="hb-tiers">
+      <div class="hb-tunnel far"><div class="hb-plane">
+        <i class="hb-panel p3"><b><u></u></b></i>
+        <i class="hb-panel p7"><b><u></u></b></i>
+        <i class="hb-panel p9"><b><u></u></b></i>
+      </div></div>
+      <div class="hb-tunnel mid"><div class="hb-plane">
+        <i class="hb-panel p1"><b><u></u></b></i>
+        <i class="hb-panel p4"><b><u></u></b></i>
+        <i class="hb-panel p5"><b><u></u></b></i>
+      </div></div>
+      <div class="hb-tunnel near"><div class="hb-plane">
+        <i class="hb-panel p2"><b><u></u></b></i>
+        <i class="hb-panel p6"><b><u></u></b></i>
+        <i class="hb-panel p8"><b><u></u></b></i>
+      </div></div>
+    </div>
+    <div class="hb-softspot"></div>
+    <div class="hb-vignette"></div>
+  </div>
+
+
+  <header class="navbar navbar-static" id="top">
+    <div class="navbar-inner">
+      <a class="brand-lockup" href="<?php echo esc_url(home_url('/')); ?>" aria-label="Crestia Ventures home">
+        <img class="nav-logo-slot" src="<?php echo esc_url(crestia_asset('assets/images/Gemini_Generated_Image_wglq2wglq2wglq2w.png')); ?>" width="42" height="42" alt="">
+        <span class="brand-name">
+          <span class="wordmark-line">CRESTIA</span>
+          <span class="wordmark-divider"></span>
+          <span class="wordmark-line">VENTURES</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="<?php echo esc_url(home_url('/rcm/')); ?>">RCM</a>
+        <a href="<?php echo esc_url(home_url('/it/')); ?>">IT Staffing</a>
+        <a href="<?php echo esc_url(home_url('/healthcare/')); ?>">Medical Staffing</a>
+      </nav>
+      <a class="nav-contact" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+
+        <div class="hero-copy">
+          <span class="eyebrow">Next-generation CRM platform</span>
+          <h1 id="hero-title">Manage Smarter.<span class="h1-line">Grow Faster.</span></h1>
+          <p class="hero-desc">Bring your leads, customers, sales and business analytics together in one powerful CRM platform. Simplify workflows and turn every opportunity into growth.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="page-not-found.html">Get Started</a>
+            <a class="btn btn-ghost" href="page-not-found.html">Contact Us</a>
+          </div>
+          <p class="hero-trust">
+            <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 10.4l2.6 2.6L14 7.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Full-cycle RCM, or targeted support: denial recovery, A/R clean-up, credentialing and billing audits.</span>
+          </p>
+        </div>
+
+        <div class="hero-stage-col">
+          <div class="stage" id="stage" role="img" aria-label="Three sample CRM dashboards on desktop monitors: a revenue growth line chart, a weekly lead analytics bar chart and a lead distribution pie chart.">
+
+            <!-- Monitor 1: Revenue Growth line chart -->
+            <div class="monitor" data-monitor="0" aria-hidden="true">
+              <div class="m-shadow"></div>
+              <div class="m-back"></div>
+              <div class="m-neck"></div>
+              <div class="m-base"></div>
+              <div class="m-body">
+                <div class="m-screen">
+                  <div class="scr scr-line" data-chart="line">
+                    <div class="scr-top"><span class="scr-dot"></span><span class="scr-name">Revenue Growth</span><span class="scr-tag">Sample view</span></div>
+                    <div class="scr-kpi">
+                      <div class="scr-kpi-main">
+                        <span class="scr-label">Total Revenue</span>
+                        <strong class="scr-value" data-role="count">$84,290</strong>
+                      </div>
+                      <span class="scr-badge">+24.8%</span>
+                    </div>
+                    <svg class="scr-chart" viewBox="0 0 240 96" preserveAspectRatio="xMidYMid meet" focusable="false">
+                      <defs>
+                        <linearGradient id="gLine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B98F4A"/><stop offset="1" stop-color="#D6AD60"/></linearGradient>
+                        <linearGradient id="gArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D6AD60" stop-opacity=".32"/><stop offset="1" stop-color="#D6AD60" stop-opacity="0"/></linearGradient>
+                        <radialGradient id="gPeak"><stop offset="0" stop-color="#D6AD60" stop-opacity=".75"/><stop offset="1" stop-color="#D6AD60" stop-opacity="0"/></radialGradient>
+                      </defs>
+                      <g class="grid">
+                        <line x1="8" x2="236" y1="18" y2="18"/><line x1="8" x2="236" y1="38" y2="38"/><line x1="8" x2="236" y1="58" y2="58"/><line x1="8" x2="236" y1="78" y2="78"/>
+                      </g>
+                      <path class="area" fill="url(#gArea)" d="M12 66 L43 56 L74 61 L105 44 L136 49 L167 30 L198 35 L229 12 L229 78 L12 78 Z"/>
+                      <path class="line" pathLength="1" fill="none" stroke="url(#gLine)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M12 66 L43 56 L74 61 L105 44 L136 49 L167 30 L198 35 L229 12"/>
+                      <g class="pts">
+                        <circle cx="12" cy="66" r="2.2"/><circle cx="43" cy="56" r="2.2"/><circle cx="74" cy="61" r="2.2"/><circle cx="105" cy="44" r="2.2"/><circle cx="136" cy="49" r="2.2"/><circle cx="167" cy="30" r="2.2"/><circle cx="198" cy="35" r="2.2"/>
+                      </g>
+                      <circle class="peak-glow" cx="229" cy="12" r="13" fill="url(#gPeak)"/>
+                      <circle class="peak-dot" cx="229" cy="12" r="3.2"/>
+                      <g class="xl"><text x="12" y="90">Jan</text><text x="43" y="90">Feb</text><text x="74" y="90">Mar</text><text x="105" y="90">Apr</text><text x="136" y="90">May</text><text x="167" y="90">Jun</text><text x="198" y="90">Jul</text><text x="229" y="90">Aug</text></g>
+                    </svg>
+                  </div>
+                  <div class="m-glass"></div>
+                  <div class="m-dim"></div>
+                </div>
+                <div class="m-chin"><span class="m-logo">CRESTIA</span><span class="m-led"></span></div>
+              </div>
+            </div>
+
+            <!-- Monitor 2: Lead Analytics bar chart -->
+            <div class="monitor" data-monitor="1" aria-hidden="true">
+              <div class="m-shadow"></div>
+              <div class="m-back"></div>
+              <div class="m-neck"></div>
+              <div class="m-base"></div>
+              <div class="m-body">
+                <div class="m-screen">
+                  <div class="scr scr-bars" data-chart="bars">
+                    <div class="scr-top"><span class="scr-dot"></span><span class="scr-name">Lead Analytics</span><span class="scr-tag">Sample view</span></div>
+                    <div class="scr-kpi">
+                      <div class="scr-kpi-main">
+                        <span class="scr-label">Total Leads</span>
+                        <strong class="scr-value" data-role="count">1,284</strong>
+                      </div>
+                      <span class="scr-badge">+18.6%</span>
+                    </div>
+                    <svg class="scr-chart" viewBox="0 0 240 96" preserveAspectRatio="xMidYMid meet" focusable="false">
+                      <defs>
+                        <linearGradient id="gBar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4CB97"/><stop offset=".5" stop-color="#D6AD60"/><stop offset="1" stop-color="#B98F4A"/></linearGradient>
+                      </defs>
+                      <g class="grid">
+                        <line x1="4" x2="236" y1="18" y2="18"/><line x1="4" x2="236" y1="38" y2="38"/><line x1="4" x2="236" y1="58" y2="58"/><line x1="4" x2="236" y1="78" y2="78"/>
+                      </g>
+                      <g class="bars">
+                        <rect x="10"    y="52" width="22" height="26" rx="3" fill="url(#gBar)" data-h="26"/>
+                        <rect x="42.5"  y="40" width="22" height="38" rx="3" fill="url(#gBar)" data-h="38"/>
+                        <rect x="75"    y="46" width="22" height="32" rx="3" fill="url(#gBar)" data-h="32"/>
+                        <rect x="107.5" y="28" width="22" height="50" rx="3" fill="url(#gBar)" data-h="50"/>
+                        <rect x="140"   y="36" width="22" height="42" rx="3" fill="url(#gBar)" data-h="42"/>
+                        <rect x="172.5" y="16" width="22" height="62" rx="3" fill="url(#gBar)" data-h="62"/>
+                        <rect x="205"   y="22" width="22" height="56" rx="3" fill="url(#gBar)" data-h="56"/>
+                      </g>
+                      <g class="xl"><text x="21" y="90">W1</text><text x="53.5" y="90">W2</text><text x="86" y="90">W3</text><text x="118.5" y="90">W4</text><text x="151" y="90">W5</text><text x="183.5" y="90">W6</text><text x="216" y="90">W7</text></g>
+                    </svg>
+                  </div>
+                  <div class="m-glass"></div>
+                  <div class="m-dim"></div>
+                </div>
+                <div class="m-chin"><span class="m-logo">CRESTIA</span><span class="m-led"></span></div>
+              </div>
+            </div>
+
+            <!-- Monitor 3: Lead Distribution pie chart -->
+            <div class="monitor" data-monitor="2" aria-hidden="true">
+              <div class="m-shadow"></div>
+              <div class="m-back"></div>
+              <div class="m-neck"></div>
+              <div class="m-base"></div>
+              <div class="m-body">
+                <div class="m-screen">
+                  <div class="scr scr-pie" data-chart="pie">
+                    <div class="scr-top"><span class="scr-dot"></span><span class="scr-name">Lead Distribution</span><span class="scr-tag">Sample view</span></div>
+                    <div class="pie-row">
+                      <svg class="pie-svg" viewBox="0 0 100 100" focusable="false">
+                        <circle class="pie-track" cx="50" cy="50" r="34" fill="none" stroke-width="8"/>
+                        <circle class="seg seg-0" data-start="0"  data-len="40" cx="50" cy="50" r="34" fill="none" stroke="#D6AD60" stroke-width="8" pathLength="100" stroke-dasharray="39 100" transform="rotate(-90 50 50)"/>
+                        <circle class="seg seg-1" data-start="40" data-len="30" cx="50" cy="50" r="34" fill="none" stroke="#B98F4A" stroke-width="8" pathLength="100" stroke-dasharray="29 100" transform="rotate(54 50 50)"/>
+                        <circle class="seg seg-2" data-start="70" data-len="20" cx="50" cy="50" r="34" fill="none" stroke="#8A7047" stroke-width="8" pathLength="100" stroke-dasharray="19 100" transform="rotate(162 50 50)"/>
+                        <circle class="seg seg-3" data-start="90" data-len="10" cx="50" cy="50" r="34" fill="none" stroke="#DCD4C3" stroke-width="8" pathLength="100" stroke-dasharray="9 100" transform="rotate(234 50 50)"/>
+                        <text class="pie-pct" data-role="count" x="50" y="52" text-anchor="middle">100%</text>
+                        <text class="pie-sub" x="50" y="62" text-anchor="middle">of leads</text>
+                      </svg>
+                      <ul class="pie-legend">
+                        <li data-seg="0"><i style="background:#D6AD60"></i><span>Organic</span><b>40%</b></li>
+                        <li data-seg="1"><i style="background:#B98F4A"></i><span>Social Media</span><b>30%</b></li>
+                        <li data-seg="2"><i style="background:#8A7047"></i><span>Referral</span><b>20%</b></li>
+                        <li data-seg="3"><i style="background:#DCD4C3"></i><span>Others</span><b>10%</b></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="m-glass"></div>
+                  <div class="m-dim"></div>
+                </div>
+                <div class="m-chin"><span class="m-logo">CRESTIA</span><span class="m-led"></span></div>
+              </div>
+            </div>
+
+          </div>
+          <p class="stage-caption">Illustrative dashboard views. Figures are sample data.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section rsv-root" id="services" aria-labelledby="services-title">
+      <div class="rcm-ring-shell">
+        <div class="rcm-ring-heading">
+          <span class="eyebrow">Our expertise</span>
+          <h2 id="services-title">Every claim matters.</h2>
+        </div>
+        <div
+          class="rcm-ring"
+          id="rcm-ring"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Healthcare revenue cycle management services"
+        >
+          <div
+            class="rcm-ring__stage"
+            tabindex="0"
+            aria-label="Service cards. Use the left and right arrow keys to change cards, or drag horizontally."
+          >
+            <div class="rcm-ring__glow" aria-hidden="true">
+              <span class="rcm-ring__glow-cyan"></span>
+              <span class="rcm-ring__glow-lavender"></span>
+            </div>
+            <div class="rcm-ring__canvas" aria-hidden="true"></div>
+            <span class="rcm-ring__instructions">Drag to browse services. Press left or right arrow to change the active service.</span>
+          </div>
+          <div class="rcm-ring__controls" aria-label="Carousel controls">
+            <button type="button" data-ring-previous aria-label="Previous service">‹</button>
+            <span class="rcm-ring__counter" aria-hidden="true">01 / 12</span>
+            <button type="button" data-ring-next aria-label="Next service">›</button>
+          </div>
+          <div class="rcm-ring__caption">
+            <h3 class="rcm-ring__active-title">Eligibility verification</h3>
+            <p class="rcm-ring__active-description">Checks a patient's insurance coverage, benefits and demographic details before the visit, so claims start with accurate information.</p>
+          </div>
+          <p class="rcm-ring__live" aria-live="polite" aria-atomic="true"></p>
+          <ol class="rcm-ring__fallback" aria-label="Healthcare RCM services"></ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="rcm-cycle-section" id="workflow" aria-labelledby="rcm-cycle-title" data-rcm-cycle>
+      <div class="rcm-cycle-container">
+        <header class="rcm-cycle-header">
+          <div class="rcm-cycle-header-copy">
+            <p class="rcm-cycle-eyebrow">RCM workflow</p>
+            <h2 class="rcm-cycle-heading" id="rcm-cycle-title">One connected revenue cycle</h2>
+            <p class="rcm-cycle-intro">A coordinated workflow makes front-end accuracy, payer follow-up and financial reporting part of the same operating rhythm.</p>
+          </div>
+        </header>
+        <div class="rcm-cycle-stage">
+          <svg class="rcm-cycle-arrows" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <defs><marker id="rcm-cycle-arrowhead" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0 0 7 3.5 0 7z" fill="#D4A93C"/></marker></defs>
+            <g class="rcm-cycle-arrow-set rcm-cycle-arrow-set--desktop">
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="0" d="M300 250 C330 250 370 250 400 250" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="0" d="M300 250 C330 250 370 250 400 250"/>
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="1" d="M600 250 C630 250 670 250 700 250" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="1" d="M600 250 C630 250 670 250 700 250"/>
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="2" d="M900 400 L950 400 Q970 400 970 420 L970 580 Q970 600 950 600 L900 600" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="2" d="M900 400 L950 400 Q970 400 970 420 L970 580 Q970 600 950 600 L900 600"/>
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="3" d="M700 750 C670 750 630 750 600 750" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="3" d="M700 750 C670 750 630 750 600 750"/>
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="4" d="M400 750 C370 750 330 750 300 750" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="4" d="M400 750 C370 750 330 750 300 750"/>
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="5" d="M100 750 C50 750 50 700 50 650 L50 350 C50 300 50 250 100 250" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="5" d="M100 750 C50 750 50 700 50 650 L50 350 C50 300 50 250 100 250"/>
+            </g>
+            <g class="rcm-cycle-arrow-set rcm-cycle-arrow-set--tablet">
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="0" d="M460 160 C490 160 510 160 540 160" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="0" d="M460 160 C490 160 510 160 540 160"/>
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="1" d="M700 260 C700 300 700 360 700 400" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="1" d="M700 260 C700 300 700 360 700 400"/>
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="2" d="M540 500 C510 500 490 500 460 500" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="2" d="M540 500 C510 500 490 500 460 500"/>
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="3" d="M300 600 C300 640 300 700 300 740" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="3" d="M300 600 C300 640 300 700 300 740"/>
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="4" d="M460 840 C490 840 510 840 540 840" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="4" d="M460 840 C490 840 510 840 540 840"/>
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="5" d="M860 840 L940 840 Q980 840 980 800 L980 100 Q980 60 940 60 L300 60 L300 100" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="5" d="M860 840 L940 840 Q980 840 980 800 L980 100 Q980 60 940 60 L300 60 L300 100"/>
+            </g>
+            <g class="rcm-cycle-arrow-set rcm-cycle-arrow-set--mobile">
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="0" d="M560 135 L560 175" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="0" d="M560 135 L560 175"/>
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="1" d="M560 305 L560 345" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="1" d="M560 305 L560 345"/>
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="2" d="M560 475 L560 515" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="2" d="M560 475 L560 515"/>
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="3" d="M560 645 L560 685" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="3" d="M560 645 L560 685"/>
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="4" d="M560 815 L560 855" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="4" d="M560 815 L560 855"/>
+              <path class="rcm-cycle-arrow-base" data-rcm-cycle-arrow="5" d="M180 920 L75 920 Q45 920 45 890 L45 100 Q45 70 75 70 L180 70" marker-end="url(#rcm-cycle-arrowhead)"/><path class="rcm-cycle-arrow-flow" data-rcm-cycle-flow="5" d="M180 920 L75 920 Q45 920 45 890 L45 100 Q45 70 75 70 L180 70"/>
+            </g>
+            <circle class="rcm-cycle-dot" cx="0" cy="0" r="4.5"/>
+          </svg>
+          <ol class="rcm-cycle-grid" aria-label="Revenue cycle workflow steps">
+            <li class="rcm-cycle-card" tabindex="0"><div class="rcm-cycle-card-body"><article class="rcm-cycle-face rcm-cycle-face--front"><span class="rcm-cycle-badge" aria-hidden="true">01</span><h3>Patient intake</h3><p>Patient information and insurance verification.</p></article></div></li>
+            <li class="rcm-cycle-card" tabindex="0"><div class="rcm-cycle-card-body"><article class="rcm-cycle-face rcm-cycle-face--front"><span class="rcm-cycle-badge" aria-hidden="true">02</span><h3>Pre-service review</h3><p>Benefits, eligibility and authorization.</p></article></div></li>
+            <li class="rcm-cycle-card" tabindex="0"><div class="rcm-cycle-card-body"><article class="rcm-cycle-face rcm-cycle-face--front"><span class="rcm-cycle-badge" aria-hidden="true">03</span><h3>Coding &amp; charges</h3><p>Documentation, code review and charge entry.</p></article></div></li>
+            <li class="rcm-cycle-card" tabindex="0"><div class="rcm-cycle-card-body"><article class="rcm-cycle-face rcm-cycle-face--front"><span class="rcm-cycle-badge" aria-hidden="true">04</span><h3>Claims processing</h3><p>Scrubbing, submission and rejection handling.</p></article></div></li>
+            <li class="rcm-cycle-card" tabindex="0"><div class="rcm-cycle-card-body"><article class="rcm-cycle-face rcm-cycle-face--front"><span class="rcm-cycle-badge" aria-hidden="true">05</span><h3>Denials &amp; A/R</h3><p>Appeals, payer follow-up and aging recovery.</p></article></div></li>
+            <li class="rcm-cycle-card" tabindex="0"><div class="rcm-cycle-card-body"><article class="rcm-cycle-face rcm-cycle-face--front"><span class="rcm-cycle-badge" aria-hidden="true">06</span><h3>Posting &amp; insight</h3><p>Reconciliation, dashboards and trends.</p></article></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="rcm-metrics-section" id="performance" aria-labelledby="performance-title" data-rcm-section="metrics">
+      <div class="rcm-section-container">
+        <header class="rcm-section-head">
+          <p class="rcm-section-eyebrow">Measurable priorities</p>
+          <h2 class="rcm-section-heading" id="performance-title"><span class="rcm-heading-clip"><span>Reporting designed</span></span> <span class="rcm-heading-clip"><span>for decisions</span></span></h2>
+          <p class="rcm-section-intro">Claim quality, denials, A/R aging and collections, reviewed on an agreed reporting cadence.</p>
+        </header>
+        <ul class="rcm-metrics__list" aria-label="Measurable priorities">
+          <li class="rcm-metric-card" tabindex="0"><svg class="rcm-metrics__icon" data-rcm-icon aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><h3 class="rcm-metrics__title">Clean claims</h3><p>First-pass acceptance</p></li>
+          <li class="rcm-metric-card" tabindex="0"><svg class="rcm-metrics__icon" data-rcm-icon aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m14.5 12.5 5 5"/><path d="m19.5 12.5-5 5"/></svg><h3 class="rcm-metrics__title">Denials</h3><p>Root causes &amp; trends</p></li>
+          <li class="rcm-metric-card" tabindex="0"><svg class="rcm-metrics__icon" data-rcm-icon aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.17a2 2 0 0 0-.59-1.42L12 12l-4.41 4.41A2 2 0 0 0 7 17.83V22"/><path d="M7 2v4.17a2 2 0 0 0 .59 1.42L12 12l4.41-4.41A2 2 0 0 0 17 6.17V2"/></svg><h3 class="rcm-metrics__title">Days in A/R</h3><p>Collection velocity</p></li>
+          <li class="rcm-metric-card" tabindex="0"><svg class="rcm-metrics__icon" data-rcm-icon aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h3v-4z"/></svg><h3 class="rcm-metrics__title">Collections</h3><p>Net collection performance</p></li>
+          <li class="rcm-metric-card" tabindex="0"><svg class="rcm-metrics__icon" data-rcm-icon aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8 4-8 4-8-4 8-4Z"/><path d="m4 10 8 4 8-4"/><path d="m4 14 8 4 8-4"/></svg><h3 class="rcm-metrics__title">Aging mix</h3><p>60 / 90+ day balances</p></li>
+          <li class="rcm-metric-card" tabindex="0"><svg class="rcm-metrics__icon" data-rcm-icon aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg><h3 class="rcm-metrics__title">Payer trends</h3><p>Reimbursement visibility</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ENGAGEMENT -->
+    <section class="section section-alt" id="engagement" aria-labelledby="engagement-title">
+      <div class="container">
+        <div class="engage reveal">
+          <div>
+            <span class="eyebrow">Engagement flexibility</span>
+            <h2 id="engagement-title">Full-cycle RCM or targeted support</h2>
+            <p>Scope, SLAs, workflows and system access are agreed during onboarding. Client-specific requirements, security measures and responsibilities are confirmed in writing before work begins.</p>
+          </div>
+          <ul class="chips">
+            <li>Full-cycle RCM</li>
+            <li>Denial recovery</li>
+            <li>A/R clean-up</li>
+            <li>Provider credentialing</li>
+            <li>Billing audits</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section cta" id="contact" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-card reveal">
+          <span class="eyebrow">Let's connect</span>
+          <h2 id="cta-title">Talk to us about your revenue cycle</h2>
+          <p>Explore a practical partnership for your billing, denials and receivables priorities.</p>
+          <div class="hero-actions center">
+            <a class="btn btn-primary" href="mailto:info@crestiaventures.com">Get Started</a>
+            <a class="btn btn-ghost" href="tel:+19293993984">+1 (929) 399-3984</a>
+            <a class="btn btn-ghost" href="mailto:info@crestiaventures.com">info@crestiaventures.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rcm-footer">
+    <div class="container footer-inner">
+      <span>&copy; <span id="yr">2026</span> Crestia Ventures. All rights reserved.</span>
+      <span class="footer-note">Dashboards on this page are illustrative sample views, not client results or guaranteed outcomes.</span>
+    </div>
+  </footer>
+
+  
+  
+  
+  
+  
+  
+

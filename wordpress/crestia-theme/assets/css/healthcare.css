@@ -1,0 +1,1071 @@
+﻿.medical-choices {
+  --choice-forest: #003B2F;
+  --choice-dark-green: #004D3D;
+  --choice-emerald: #008F72;
+  --choice-mint: #008F72;
+  --choice-soft-mint: #8FC6A8;
+  --choice-light-mint: #EDF6F0;
+  --choice-off-white: #003B2F;
+  --choice-white: #FFFFFF;
+  --choice-dark-text: #003B2F;
+  --choice-secondary: #64766E;
+  position: relative;
+  overflow: hidden;
+  padding: clamp(76px, 9vw, 124px) 24px clamp(88px, 10vw, 136px);
+  background: #EDF6F0;
+  color: #52665B;
+}
+
+.medical-choices-inner {
+  position: relative;
+  z-index: 2;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.medical-choices-heading {
+  margin: 0 auto clamp(38px, 5vw, 62px);
+  text-align: center;
+}
+
+.medical-choices-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  color: var(--choice-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.medical-choices-eyebrow span {
+  color: var(--choice-emerald);
+  font-size: 13px;
+}
+
+.medical-choices-heading h2 {
+  margin: 0;
+  color: var(--choice-forest);
+  font-size: clamp(44px, 6.2vw, 72px);
+  line-height: 1;
+}
+
+.medical-choice-word {
+  display: inline-block;
+}
+
+.medical-choices-heading h2 .medical-heading-highlight {
+  color: var(--choice-emerald);
+  font-style: italic;
+}
+
+.medical-choices-subtitle {
+  margin: 18px auto 0;
+  color: #52665B;
+  font-size: clamp(14px, 1.35vw, 17px);
+  line-height: 1.65;
+}
+
+.medical-choices-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(22px, 3.2vw, 38px);
+}
+
+.medical-choice-entry {
+  min-width: 0;
+}
+
+.medical-choice-card {
+  position: relative;
+  height: clamp(440px, 42vw, 520px);
+  min-width: 0;
+  perspective: 1100px;
+  border-radius: 22px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: top 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.medical-choice-card:focus-visible {
+  outline: 2px solid var(--choice-mint);
+  outline-offset: 6px;
+}
+
+.medical-choice-flipper {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(0.45, 0.05, 0.2, 1);
+}
+
+.medical-choice-flipper.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.medical-choice-face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 1px solid #DCEBE1;
+  border-radius: inherit;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 20px 48px rgba(0, 59, 47, 0.12);
+}
+
+.medical-choice-front {
+  background: var(--choice-dark-green);
+  transform: rotateY(0deg);
+}
+
+.medical-choice-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.medical-choice-front::after {
+  position: absolute;
+  inset: 25% 0 0;
+  content: "";
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 35, 27, 0.2) 32%, rgba(0, 35, 27, 0.92) 100%);
+}
+
+.medical-choice-front-content {
+  position: absolute;
+  z-index: 1;
+  right: 30px;
+  bottom: 28px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--choice-white);
+}
+
+.medical-choice-icon {
+  margin-bottom: 12px;
+  color: var(--choice-mint);
+}
+
+.medical-choice-front h3 {
+  margin: 0;
+  color: var(--choice-white);
+  font-size: clamp(28px, 3vw, 37px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.medical-choice-accent-line {
+  width: 42px;
+  height: 2px;
+  margin: 16px 0 13px;
+  border-radius: 2px;
+  background: var(--choice-mint);
+  box-shadow: 0 0 18px rgba(0, 143, 114, 0.3);
+}
+
+.medical-choice-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--choice-soft-mint);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.medical-choice-hint svg {
+  color: var(--choice-mint);
+}
+
+.medical-choice-back {
+  display: grid;
+  place-items: center;
+  padding: 38px;
+  background: #003B2F;
+  transform: rotateY(180deg);
+}
+
+.medical-choice-back-content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 390px);
+  text-align: center;
+}
+
+.medical-choice-back-content .medical-choice-icon {
+  margin: 0 0 20px;
+  color: #4FE3A1;
+}
+
+.medical-choice-back h3 {
+  margin: 0;
+  color: #FFFFFF;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1.03;
+  letter-spacing: -0.025em;
+}
+
+.medical-choice-back p {
+  margin: 18px 0 28px;
+  color: #C9F5DF;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.medical-choice-cta {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  background: #4FE3A1;
+  color: #003B2F;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.medical-choice-cta:disabled {
+  cursor: not-allowed;
+}
+
+.medical-choice-cta:not(:disabled):hover,
+.medical-choice-cta:not(:disabled):focus-visible {
+  transform: translateY(-2px);
+  background: #C9F5DF;
+  color: #003B2F;
+  box-shadow: 0 10px 24px rgba(0, 143, 114, 0.18);
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .medical-choice-card:hover {
+    top: -4px;
+  }
+  .medical-choice-card:hover .medical-choice-face {
+    box-shadow: 0 28px 64px rgba(0, 59, 47, 0.17);
+  }
+  .medical-choice-card:hover:not(:focus-within) .medical-choice-image {
+    transform: scale(1.045);
+  }
+}
+
+@media (max-width: 820px) {
+  .medical-choice-card {
+    height: clamp(400px, 54vw, 480px);
+  }
+  .medical-choice-back {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 620px) {
+  .medical-choices {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+  .medical-choices-heading {
+    margin-bottom: 34px;
+  }
+  .medical-choices-heading h2 {
+    font-size: clamp(42px, 11vw, 58px);
+  }
+  .medical-choices-subtitle {
+    max-width: 360px;
+  }
+  .medical-choices-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .medical-choice-card {
+    height: min(118vw, 470px);
+    min-height: 410px;
+  }
+  .medical-choice-front-content {
+    right: 24px;
+    bottom: 24px;
+    left: 24px;
+  }
+  .medical-choice-back {
+    padding: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .medical-choice-entry {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .medical-choice-card {
+    top: 0 !important;
+  }
+  .medical-choice-flipper,
+  .medical-choice-image,
+  .medical-choice-cta {
+    transition-duration: 0.01ms !important;
+  }
+}
+.transforming-recruitment {
+  --recruitment-forest: #003B2F;
+  --recruitment-dark-green: #EDF6F0;
+  --recruitment-emerald: #008F72;
+  --recruitment-mint: #008F72;
+  --recruitment-off-white: #003B2F;
+  position: relative;
+  overflow: hidden;
+  padding: 24px 24px 28px;
+  background: #F4FAF6;
+  color: #52665B;
+}
+
+.transforming-recruitment-inner {
+  position: relative;
+  z-index: 2;
+  width: min(1280px, 100%);
+  margin: 0 auto;
+}
+
+.transforming-recruitment-heading {
+  margin: 0 auto clamp(18px, 2.4vh, 25px);
+  text-align: center;
+}
+
+.transforming-recruitment-heading h2 {
+  margin: 0;
+  color: var(--recruitment-off-white);
+  font-size: clamp(44px, 6.2vw, 72px);
+  line-height: 1;
+}
+
+.transforming-recruitment-highlight {
+  color: var(--recruitment-mint);
+}
+
+.transforming-recruitment-heading p {
+  max-width: 860px;
+  margin: 10px auto 0;
+  color: #52665B;
+  font-size: clamp(14px, 1.25vw, 17px);
+  line-height: 1.55;
+}
+
+.transforming-recruitment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  justify-items: center;
+  gap: clamp(18px, 3vw, 42px);
+}
+
+.recruitment-circle-entry {
+  width: min(100%, clamp(280px, 34vh, 360px));
+  aspect-ratio: 1;
+}
+
+.recruitment-circle {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  border: 1.5px solid #DCEBE1;
+  border-radius: 50%;
+  background: #003B2F;
+  box-shadow: 0 12px 34px rgba(0, 59, 47, 0.1);
+  color: var(--recruitment-off-white);
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.recruitment-circle:focus-visible {
+  outline: 2px solid var(--recruitment-emerald);
+  outline-offset: 6px;
+}
+
+.recruitment-circle-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 59.3%;
+  opacity: 1;
+  visibility: visible;
+  object-fit: cover;
+  object-position: center;
+  transition:
+    opacity 0.45s ease-in-out,
+    visibility 0s linear;
+}
+
+.recruitment-circle-panel {
+  position: absolute;
+  inset: 58.8% 0 0;
+  z-index: 1;
+  display: block;
+  background: #003B2F;
+  transition: inset 0.55s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.recruitment-circle-copy {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 7px 25px 10px;
+  transition: padding 0.5s cubic-bezier(0.33, 1, 0.68, 1), gap 0.5s ease;
+}
+
+.recruitment-circle-title {
+  display: block;
+  max-width: 100%;
+  color: #FFFFFF;
+  font-size: clamp(18px, 1.55vw, 23px);
+  font-weight: 700;
+  line-height: 1.15;
+  transition:
+    font-size 0.35s ease,
+    transform 0.35s ease;
+}
+
+.recruitment-circle-description {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  color: #C9F5DF;
+  font-size: clamp(9.5px, 0.78vw, 11.5px);
+  line-height: 1.32;
+  transform: translateY(8px);
+  transition:
+    max-height 0.5s ease,
+    opacity 0.45s ease,
+    transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.recruitment-circle.is-active {
+  z-index: 2;
+  border-color: var(--recruitment-mint);
+  box-shadow: 0 18px 44px rgba(0, 59, 47, 0.14), 0 0 22px rgba(0, 143, 114, 0.1);
+}
+
+.recruitment-circle.is-active .recruitment-circle-photo {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.45s ease-in-out,
+    visibility 0s linear 0.45s;
+}
+
+.recruitment-circle.is-active .recruitment-circle-panel {
+  inset: 0;
+  transition-delay: 0.04s;
+}
+
+.recruitment-circle.is-active .recruitment-circle-copy {
+  justify-content: center;
+  gap: 7px;
+  padding: 34px 32px;
+}
+
+.recruitment-circle.is-active .recruitment-circle-title {
+  font-size: clamp(16px, 1.3vw, 19px);
+}
+
+.recruitment-circle.is-active .recruitment-circle-description {
+  max-height: 150px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.22s, 0.22s, 0.22s;
+}
+
+@media (max-width: 900px) {
+  .transforming-recruitment-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .recruitment-circle-entry:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .recruitment-circle-entry {
+    width: min(100%, clamp(250px, 35vw, 300px));
+  }
+}
+
+@media (max-width: 620px) {
+  .transforming-recruitment {
+    padding: 34px 18px 42px;
+  }
+
+  .transforming-recruitment-heading {
+    margin-bottom: 24px;
+  }
+
+  .transforming-recruitment-heading h2 {
+    font-size: clamp(42px, 11vw, 58px);
+  }
+
+  .transforming-recruitment-heading p {
+    max-width: 390px;
+    font-size: 14px;
+  }
+
+  .transforming-recruitment-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .recruitment-circle-entry,
+  .recruitment-circle-entry:last-child {
+    grid-column: auto;
+    width: min(80vw, 330px);
+  }
+
+  .recruitment-circle-title {
+    font-size: clamp(20px, 6vw, 23px);
+  }
+
+  .recruitment-circle.is-active .recruitment-circle-title {
+    font-size: clamp(17px, 5vw, 19px);
+  }
+
+  .recruitment-circle-description {
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recruitment-circle,
+  .recruitment-circle-panel,
+  .recruitment-circle-photo,
+  .recruitment-circle-copy,
+  .recruitment-circle-title,
+  .recruitment-circle-description {
+    transition-duration: 0.01ms !important;
+  }
+}
+.healthcare-specializations {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 100vh;
+  min-height: 100svh;
+  position: relative;
+  overflow: hidden;
+  color: #52665B;
+  background: #EDF6F0;
+  padding: clamp(48px, 6vh, 80px) 28px;
+}
+
+.healthcare-specializations-inner {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1440px);
+  margin: auto;
+}
+
+.healthcare-specializations-heading {
+  max-width: 880px;
+  margin: 0 auto clamp(28px, 4vh, 44px);
+  text-align: center;
+}
+
+.healthcare-specializations-heading h2 {
+  margin: 0;
+  color: #003B2F;
+  font-size: clamp(44px, 6.2vw, 72px);
+  line-height: 1;
+}
+
+.healthcare-specializations-heading h2 span {
+  color: #008F72;
+  font-style: italic;
+}
+
+.healthcare-specializations-heading p {
+  max-width: 780px;
+  margin: 18px auto 0;
+  color: #52665B;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(15px, 1.25vw, 18px);
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.healthcare-specializations-scroll {
+  width: 100%;
+}
+
+.healthcare-specializations-track {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  height: clamp(360px, 64vh, 880px);
+}
+
+.healthcare-specialization-card {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid #DCEBE1;
+  border-radius: 18px;
+  background: #FFFFFF;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    flex-grow 680ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 350ms ease;
+}
+
+.healthcare-specializations-track .healthcare-specialization-card.is-expanded {
+  flex-grow: 4.5;
+  border-color: rgba(0, 143, 114, 0.72);
+}
+
+.healthcare-specializations-scroll.has-active-card
+  .healthcare-specialization-card:not(.is-expanded) {
+  flex-grow: 0.9;
+}
+
+.healthcare-specialization-card:focus-visible {
+  outline: 3px solid #008F72;
+  outline-offset: 4px;
+}
+
+.healthcare-specialization-image,
+.healthcare-specialization-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.healthcare-specialization-image {
+  z-index: -2;
+  object-fit: cover;
+  transition: filter 500ms ease;
+}
+
+.healthcare-specialization-overlay {
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(0, 20, 16, 0.04) 18%, rgba(0, 20, 16, 0.3) 56%, rgba(0, 20, 16, 0.88) 100%),
+    linear-gradient(90deg, rgba(0, 35, 27, 0.08), rgba(0, 35, 27, 0.04));
+  transition: background-color 400ms ease;
+}
+
+.healthcare-specialization-copy {
+  position: absolute;
+  right: clamp(16px, 2vw, 28px);
+  bottom: clamp(20px, 2.2vw, 30px);
+  left: clamp(16px, 2vw, 28px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.healthcare-specialization-title {
+  display: block;
+  max-width: 100%;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(15px, 1.32vw, 21px);
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: balance;
+  transition: font-size 450ms ease;
+}
+
+.healthcare-specialization-card.is-expanded .healthcare-specialization-title {
+  font-size: clamp(24px, 2.15vw, 32px);
+}
+
+.healthcare-specialization-description {
+  display: block;
+  max-width: 650px;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 0;
+  color: #f8faf7;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(14px, 1.08vw, 16px);
+  font-weight: 400;
+  line-height: 1.65;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    max-height 450ms ease,
+    margin-top 350ms ease,
+    opacity 350ms ease,
+    transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.healthcare-specialization-card.is-expanded .healthcare-specialization-description {
+  max-height: 12rem;
+  margin-top: 10px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 80ms, 80ms, 100ms, 80ms;
+}
+
+@media (max-width: 1100px) and (min-width: 621px) {
+  .healthcare-specializations {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .healthcare-specializations-scroll {
+    overflow-x: auto;
+    padding: 2px 2px 12px;
+    scrollbar-color: rgba(0, 143, 114, 0.42) rgba(201, 245, 223, 0.45);
+    scrollbar-width: thin;
+  }
+
+  .healthcare-specializations-track {
+    width: max(100%, 1180px);
+    height: clamp(340px, 58vh, 600px);
+  }
+
+  .healthcare-specialization-card.is-expanded .healthcare-specialization-title {
+    font-size: 28px;
+  }
+
+  .healthcare-specialization-description {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 620px) {
+  .healthcare-specializations {
+    display: block;
+    min-height: 0;
+    padding: 64px 18px 72px;
+  }
+
+  .healthcare-specializations-inner {
+    margin: 0 auto;
+  }
+
+  .healthcare-specializations-heading {
+    margin-bottom: 30px;
+  }
+
+  .healthcare-specializations-heading h2 {
+    font-size: clamp(42px, 11vw, 58px);
+  }
+
+  .healthcare-specializations-heading p {
+    margin-top: 14px;
+  }
+
+  .healthcare-specializations-scroll {
+    overflow: visible;
+  }
+
+  .healthcare-specializations-track {
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+  }
+
+  .healthcare-specialization-card,
+  .healthcare-specializations-track .healthcare-specialization-card.is-expanded,
+  .healthcare-specializations-scroll.has-active-card
+    .healthcare-specialization-card:not(.is-expanded) {
+    flex: none;
+    width: 100%;
+    height: 220px;
+  }
+
+  .healthcare-specializations-track .healthcare-specialization-card.is-expanded {
+    height: 350px;
+  }
+
+  .healthcare-specialization-copy {
+    right: 22px;
+    bottom: 22px;
+    left: 22px;
+  }
+
+  .healthcare-specialization-title,
+  .healthcare-specialization-card.is-expanded .healthcare-specialization-title {
+    font-size: 22px;
+  }
+
+  .healthcare-specialization-description {
+    max-width: 540px;
+    font-size: 14px;
+  }
+
+  .healthcare-specialization-card.is-expanded .healthcare-specialization-description {
+    max-height: 10rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .healthcare-specialization-card,
+  .healthcare-specialization-image,
+  .healthcare-specialization-title,
+  .healthcare-specialization-description {
+    transition-duration: 0.01ms;
+    transition-delay: 0ms;
+  }
+}
+.recruitment-process {
+  position: relative;
+  height: 140vh;
+  height: 140svh;
+  background: #F4FAF6;
+  color: #003B2F;
+}
+
+.recruitment-process-stage {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  align-items: flex-start;
+  padding: clamp(72px, 15svh, 160px) clamp(22px, 3vw, 48px) clamp(30px, 5svh, 64px);
+}
+
+.recruitment-process-inner {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1440px);
+  margin: 0 auto;
+}
+
+.recruitment-process-heading {
+  max-width: 900px;
+  margin: 0 auto clamp(34px, 5svh, 52px);
+  text-align: center;
+}
+
+.recruitment-process-heading h2 {
+  margin: 0;
+  color: #003B2F;
+  font-size: clamp(44px, 6.2vw, 72px);
+  line-height: 1;
+}
+
+.recruitment-process-heading p {
+  max-width: 780px;
+  margin: 18px auto 0;
+  color: #52665B;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(15px, 1.25vw, 18px);
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.recruitment-process-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(10px, 1.25vw, 18px);
+}
+
+.recruitment-process-card {
+  display: flex;
+  min-width: 0;
+  min-height: clamp(300px, 42svh, 430px);
+  flex-direction: column;
+  padding: clamp(18px, 1.7vw, 26px);
+  border: 1px solid rgba(0, 59, 47, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 16px 34px rgba(0, 59, 47, 0.08);
+}
+
+.recruitment-process-card--forest {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: #003B2F;
+}
+
+.recruitment-process-card--dark-green {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: #004D3D;
+}
+
+.recruitment-process-card--emerald {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: #008F72;
+}
+
+.recruitment-process-card--sage {
+  background: #8FC6A8;
+}
+
+.recruitment-process-card--mint {
+  background: #C9F5DF;
+}
+
+.recruitment-process-card--white {
+  border-color: #DCEBE1;
+  background: #FFFFFF;
+}
+
+.recruitment-process-number {
+  color: #008F72;
+  font-size: clamp(42px, 4.2vw, 58px);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+}
+
+.recruitment-process-card--forest .recruitment-process-number,
+.recruitment-process-card--dark-green .recruitment-process-number,
+.recruitment-process-card--emerald .recruitment-process-number {
+  color: #4FE3A1;
+}
+
+.recruitment-process-card h3 {
+  margin: clamp(24px, 3vh, 34px) 0 12px;
+  color: #003B2F;
+  font-size: clamp(18px, 1.45vw, 22px);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.recruitment-process-card--forest h3,
+.recruitment-process-card--dark-green h3,
+.recruitment-process-card--emerald h3 {
+  color: #FFFFFF;
+}
+
+.recruitment-process-card p {
+  margin: 0;
+  color: #52665B;
+  font-size: clamp(12px, 0.95vw, 14px);
+  line-height: 1.65;
+}
+
+.recruitment-process-card--forest p,
+.recruitment-process-card--dark-green p,
+.recruitment-process-card--emerald p {
+  color: #C9F5DF;
+}
+
+@media (max-width: 1100px) {
+  .recruitment-process {
+    height: auto;
+    min-height: 145vh;
+    min-height: 145svh;
+  }
+
+  .recruitment-process-stage {
+    position: relative;
+    top: auto;
+    min-height: 145vh;
+    min-height: 145svh;
+    padding: clamp(64px, 12svh, 110px) 28px 72px;
+  }
+
+  .recruitment-process-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .recruitment-process-card {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 620px) {
+  .recruitment-process {
+    min-height: 0;
+  }
+
+  .recruitment-process-stage {
+    min-height: 0;
+    padding: 64px 18px 76px;
+  }
+
+  .recruitment-process-heading {
+    margin-bottom: 30px;
+  }
+
+  .recruitment-process-heading h2 {
+    font-size: clamp(42px, 11vw, 58px);
+  }
+
+  .recruitment-process-heading p {
+    margin-top: 14px;
+    font-size: 14px;
+  }
+
+  .recruitment-process-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .recruitment-process-card {
+    min-height: 240px;
+    padding: 24px;
+  }
+
+  .recruitment-process-number {
+    font-size: 48px;
+  }
+
+  .recruitment-process-card h3 {
+    margin-top: 24px;
+    font-size: 21px;
+  }
+
+  .recruitment-process-card p {
+    max-width: 440px;
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recruitment-process {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .recruitment-process-stage {
+    position: relative;
+    top: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+}
