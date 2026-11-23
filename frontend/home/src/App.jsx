@@ -1,6 +1,7 @@
-import { lazy, Suspense, useRef } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
 import HeroSection from './components/HeroSection.jsx';
 import LogoReveal from './components/LogoReveal.jsx';
 import AboutStage from './components/AboutStage.jsx';
@@ -9,10 +10,10 @@ import ScrollController from './components/ScrollController.jsx';
 import ShaderBackground from './components/ui/ShaderBackground.jsx';
 import { brand } from './data/brand.js';
 
-const logoAssemblyModule = import('./components/LogoAssembly.jsx');
-const LogoAssembly = lazy(() => logoAssemblyModule);
+const LogoAssembly = lazy(() => import('./components/LogoAssembly.jsx'));
 
 export default function App() {
+  const [sceneReady, setSceneReady] = useState(false);
   const storyRef = useRef(null);
   const logoSlotRef = useRef(null);
   const navWordmarkRef = useRef(null);
@@ -35,16 +36,33 @@ export default function App() {
     navScale: 0.06,
   });
 
+  useEffect(() => {
+    let idleCallbackId;
+    let timeoutId;
+    const loadScene = () => setSceneReady(true);
+
+    if ('requestIdleCallback' in window) {
+      idleCallbackId = window.requestIdleCallback(loadScene, { timeout: 1500 });
+    } else {
+      timeoutId = window.setTimeout(loadScene, 0);
+    }
+
+    return () => {
+      if (idleCallbackId !== undefined) window.cancelIdleCallback(idleCallbackId);
+      if (timeoutId !== undefined) window.clearTimeout(timeoutId);
+    };
+  }, []);
+
   return (
     <>
       <ShaderBackground className="shader-background-canvas" />
 
       <Navbar logoSlotRef={logoSlotRef} wordmarkRef={navWordmarkRef} />
-      <Suspense fallback={null}>
-        <LogoAssembly
-          animationState={animationState}
-        />
-      </Suspense>
+      {sceneReady && (
+        <Suspense fallback={null}>
+          <LogoAssembly animationState={animationState} />
+        </Suspense>
+      )}
 
       <main>
         <div className="story-track" ref={storyRef} id="brand-story">
@@ -85,6 +103,8 @@ export default function App() {
           </div>
         </section>
       </main>
+
+      <Footer />
 
       <ScrollController
         storyRef={storyRef}

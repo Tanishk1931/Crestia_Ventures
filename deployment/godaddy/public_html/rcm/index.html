@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="rcm-sections.css?v=1">
   <link rel="stylesheet" href="rcm-cycle.css?v=1">
   <link rel="stylesheet" href="../shared/home-navbar.css">
+  <link rel="stylesheet" href="../shared/premium-footer.css">
   <script>document.documentElement.className += ' js';</script>
 </head>
 <body class="rcm-page">
@@ -86,8 +87,8 @@
           <h1 id="hero-title">Manage Smarter.<span class="h1-line">Grow Faster.</span></h1>
           <p class="hero-desc">Bring your leads, customers, sales and business analytics together in one powerful CRM platform. Simplify workflows and turn every opportunity into growth.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="page-not-found.html">Get Started</a>
-            <a class="btn btn-ghost" href="page-not-found.html">Contact Us</a>
+            <a class="btn btn-primary" href="#contact">Get Started</a>
+            <a class="btn btn-ghost" href="#contact">Contact Us</a>
           </div>
           <p class="hero-trust">
             <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 10.4l2.6 2.6L14 7.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -372,12 +373,8 @@
     </section>
   </main>
 
-  <footer class="rcm-footer">
-    <div class="container footer-inner">
-      <span>&copy; <span id="yr">2026</span> Crestia Ventures. All rights reserved.</span>
-      <span class="footer-note">Dashboards on this page are illustrative sample views, not client results or guaranteed outcomes.</span>
-    </div>
-  </footer>
+  <footer data-premium-footer data-footer-theme="rcm"></footer>
+  <script type="module" src="../shared/premium-footer.js"></script>
 
   <script src="gsap.min.js" defer></script>
   <script src="rcm.js" defer></script>

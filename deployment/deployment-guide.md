@@ -26,6 +26,22 @@ Building the main React site from `frontend/home/` writes to:
 
 That build also copies service directories from `deployment/godaddy/public_html/` into the production-build output.
 
+## Run the complete site locally
+
+The homepage Vite server also serves the static service pages from the GoDaddy web root:
+
+```powershell
+cd frontend/home
+npm ci
+npm run dev -- --host 0.0.0.0
+```
+
+Open the Vite URL (normally `http://localhost:5173/`). The service pages are available at
+`/rcm/`, `/it/`, `/medical/`, and `/healthcare-recruitment/`.
+
+For a production-like local preview, run `npm run build` and then `npm run preview`
+from `frontend/home/`. The build output contains the React homepage and all four service routes.
+
 ## Upload to GoDaddy
 
 1. Build home: `cd frontend/home && npm ci && npm run build`

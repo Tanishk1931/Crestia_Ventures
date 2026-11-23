@@ -5,7 +5,7 @@ const CONFIG = {
   interval: 3000,
   resumeDelay: 2500,
   threeModuleUrl: "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
-  imageUrl: new URL("../assets/rcm-team.jpg", import.meta.url).href,
+  imageUrl: new URL("../assets/showcase-rcm-team.jpg", import.meta.url).href,
   stage: {
     desktopMinHeight: 440,
     desktopHeightVw: 43,

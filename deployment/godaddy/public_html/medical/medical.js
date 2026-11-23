@@ -12,8 +12,6 @@
   const pageCanvas = document.querySelector('.medical-page-canvas');
   let transitionComplete = false;
 
-  document.getElementById('medical-year').textContent = new Date().getFullYear();
-
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (reduceMotion.matches) {
     if (video) video.pause();

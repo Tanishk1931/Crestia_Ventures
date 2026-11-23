@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../shared/home-navbar.css">
+  <link rel="stylesheet" href="../shared/premium-footer.css">
   <style>
     :root {
       --hc-ink: #0A1640;
@@ -178,14 +179,7 @@
     </section>
   </main>
 
-  <footer class="hc-footer">
-    <div class="hc-wrap">
-      &copy; <span id="yr">2026</span> Crestia Ventures. All rights reserved.
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('yr').textContent = String(new Date().getFullYear());
-  </script>
+  <footer data-premium-footer data-footer-theme="healthcare"></footer>
+  <script type="module" src="../shared/premium-footer.js"></script>
 </body>
 </html>

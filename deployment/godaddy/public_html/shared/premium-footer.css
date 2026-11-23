@@ -1,0 +1,259 @@
+.crestia-footer {
+  --footer-bg: #070808;
+  --footer-primary: #f0eee9;
+  --footer-muted: rgba(240, 238, 233, 0.58);
+  --footer-accent: #c29a52;
+  --footer-divider: rgba(240, 238, 233, 0.18);
+  --footer-link: #efede8;
+  --footer-hover: #17835f;
+  background: var(--footer-bg);
+  color: var(--footer-primary);
+  border-top: 1px solid var(--footer-divider);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 64px 0 24px;
+}
+
+.crestia-footer[data-footer-theme="home"] {
+  position: relative;
+  z-index: 5;
+}
+
+.crestia-footer[data-footer-theme="rcm"] {
+  --footer-bg: #eae7de;
+  --footer-primary: #202020;
+  --footer-muted: #777777;
+  --footer-accent: #d6ad60;
+  --footer-divider: rgba(32, 32, 32, 0.09);
+  --footer-link: #202020;
+  --footer-hover: #c69b4f;
+}
+
+.crestia-footer[data-footer-theme="it"] {
+  --footer-bg: #0a1640;
+  --footer-primary: #ffffff;
+  --footer-muted: rgba(245, 239, 230, 0.68);
+  --footer-accent: #4a7aeb;
+  --footer-divider: rgba(245, 239, 230, 0.14);
+  --footer-link: rgba(245, 239, 230, 0.82);
+  --footer-hover: #4a7aeb;
+}
+
+.crestia-footer[data-footer-theme="medical"] {
+  --footer-bg: #edf6f0;
+  --footer-primary: #003b2f;
+  --footer-muted: #52665b;
+  --footer-accent: #008f72;
+  --footer-divider: #dcebe1;
+  --footer-link: #003b2f;
+  --footer-hover: #008f72;
+}
+
+.crestia-footer[data-footer-theme="healthcare"] {
+  --footer-bg: #f7f9fc;
+  --footer-primary: #0a1640;
+  --footer-muted: #5a6478;
+  --footer-accent: #1148d7;
+  --footer-divider: rgba(10, 22, 64, 0.10);
+  --footer-link: #0a1640;
+  --footer-hover: #1148d7;
+}
+
+.crestia-footer-inner {
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.crestia-footer-brand {
+  max-width: 660px;
+  margin-bottom: 42px;
+}
+
+.crestia-footer-brand-category {
+  margin: 0 0 8px;
+  color: var(--footer-accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.crestia-footer-brand h2 {
+  margin: 0 0 10px;
+  color: var(--footer-primary);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.crestia-footer-brand p:not(.crestia-footer-brand-category) {
+  margin: 0 0 10px;
+  color: var(--footer-muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.crestia-footer-brand a {
+  color: var(--footer-link);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.crestia-footer-brand a:hover,
+.crestia-footer-brand a:focus-visible {
+  color: var(--footer-hover);
+}
+
+.crestia-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 56px);
+  padding-bottom: 44px;
+}
+
+.crestia-footer-heading {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 18px;
+  color: var(--footer-primary);
+  font-size: 14px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.crestia-footer-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 34px;
+  height: 2px;
+  background: var(--footer-accent);
+  transition: width 0.25s ease, background-color 0.25s ease;
+}
+
+.crestia-footer-column:hover .crestia-footer-heading::after {
+  width: 48px;
+}
+
+.crestia-footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.crestia-footer-links a,
+.crestia-footer-legal a {
+  color: var(--footer-link);
+  font-size: 14.5px;
+  line-height: 1.55;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.crestia-footer-links a:hover,
+.crestia-footer-links a:focus-visible,
+.crestia-footer-legal a:hover,
+.crestia-footer-legal a:focus-visible {
+  color: var(--footer-hover);
+}
+
+.crestia-footer-links a:hover,
+.crestia-footer-links a:focus-visible {
+  transform: translateX(3px);
+}
+
+.crestia-footer-developer {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.crestia-footer-linkedin {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--footer-divider);
+  border-radius: 3px;
+  color: var(--footer-link);
+  transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.crestia-footer-linkedin:hover,
+.crestia-footer-linkedin:focus-visible {
+  color: var(--footer-hover);
+  border-color: var(--footer-accent);
+  transform: translateY(-2px);
+}
+
+.crestia-footer-linkedin svg {
+  width: 11px;
+  height: 11px;
+  fill: currentColor;
+}
+
+.crestia-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 22px;
+  border-top: 1px solid var(--footer-divider);
+  color: var(--footer-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.crestia-footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.crestia-footer-legal-separator {
+  color: var(--footer-muted);
+}
+
+@media (max-width: 900px) {
+  .crestia-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 38px;
+  }
+}
+
+@media (max-width: 600px) {
+  .crestia-footer {
+    padding: 48px 0 20px;
+  }
+
+  .crestia-footer-inner {
+    width: calc(100% - 36px);
+  }
+
+  .crestia-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-bottom: 36px;
+  }
+
+  .crestia-footer-links a,
+  .crestia-footer-legal a {
+    font-size: 14px;
+  }
+
+  .crestia-footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+

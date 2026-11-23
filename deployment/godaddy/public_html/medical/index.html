@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="medical.css?v=6">
   <link rel="stylesheet" href="medical-cards.css?v=14">
   <link rel="stylesheet" href="../shared/home-navbar.css">
+  <link rel="stylesheet" href="../shared/premium-footer.css">
 </head>
 <body class="medical-page">
   <div class="medical-page-canvas">
@@ -58,7 +59,7 @@
   <main>
     <section class="medical-intro" id="medical-intro" aria-label="Cinematic healthcare introduction">
       <div class="medical-hospital" aria-hidden="true">
-        <video id="medical-video" autoplay muted playsinline preload="auto" poster="">
+        <video id="medical-video" autoplay muted playsinline preload="metadata" poster="">
           <source src="assets/hospital-staff.mp4" type="video/mp4">
         </video>
       </div>
@@ -94,12 +95,8 @@
     </section>
   </main>
 
-  <footer class="medical-footer" id="contact">
-    <div class="medical-footer-inner">
-      <span>&copy; <span id="medical-year">2026</span> Crestia Ventures</span>
-      <a href="mailto:info@crestiaventures.com">info@crestiaventures.com</a>
-    </div>
-  </footer>
+  <footer data-premium-footer data-footer-theme="medical" id="contact"></footer>
+  <script type="module" src="../shared/premium-footer.js"></script>
   </div>
 
   <script src="../rcm/gsap.min.js" defer></script>

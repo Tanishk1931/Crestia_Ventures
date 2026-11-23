@@ -7,7 +7,7 @@ export const brand = {
     'An integrated partner for healthcare revenue operations, technology recruitment, and healthcare workforce solutions.',
   offering: 'Healthcare revenue operations, technology recruitment, and workforce solutions.',
   vision: 'Connecting healthcare expertise, technology, and talent.',
-  contactEmail: 'hello@example.com',
+  contactEmail: 'info@crestiaventures.com',
   hero: 'Stronger operations. Better talent.',
   model: '/assets/brand-logo.obj',
   material: '/assets/brand-logo.mtl',
